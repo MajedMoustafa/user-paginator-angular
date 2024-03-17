@@ -1,0 +1,22 @@
+section {
+  display: flex;
+  width: 100%;
+  height: 80vh;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  section {
+    flex-direction: column;
+    app-user-card{
+      margin-bottom: 2rem;
+    }
+  }
+}

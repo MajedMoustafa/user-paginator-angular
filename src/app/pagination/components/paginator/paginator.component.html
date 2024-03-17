@@ -1,0 +1,19 @@
+<main>
+    <mat-toolbar style="padding: 40px">
+      <mat-form-field style="width: 20rem" floatLabel="never">
+        <input matInput
+               #searchInput="matInput"
+               type="text"
+               placeholder="Search"
+               (focus)="onFocus()"
+               (keyup)="applyFilter($event.target.value)"
+               autocomplete="off"/>
+        <mat-icon [color]="searchInput.focused ? 'primary' : ''"
+                  matSuffix>search</mat-icon>
+      </mat-form-field>
+    </mat-toolbar>
+  <app-user-list [searchCounter]="searchCounter" [toSearchFor]="toSearchFor"></app-user-list>
+  <mat-paginator [length]="length" [pageIndex]="pageIndex-1" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    (page)="onChangePage($event)">
+  </mat-paginator>
+</main>
